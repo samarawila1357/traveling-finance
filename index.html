@@ -3545,3 +3545,837 @@ document.querySelectorAll("#nav a").forEach(link => {
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dropshipping - Complete Online Business Guide</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --green: #10b981;
+    --dark: #102a43;
+    --light: #f3f8f7;
+    --text: #334155;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* HEADER */
+
+header {
+    background: var(--dark);
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--green);
+}
+
+.logo span {
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+.menu {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(120deg, #102a43, #087f5b);
+    color: white;
+    padding: 90px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 5vw, 55px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #d5eee5;
+    margin-bottom: 25px;
+}
+
+.hero-icon {
+    font-size: 140px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    padding: 13px 25px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: white;
+    color: var(--dark);
+    transform: translateY(-3px);
+}
+
+/* SECTIONS */
+
+section {
+    padding: 70px 8%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.heading h2 {
+    color: var(--dark);
+    font-size: 32px;
+}
+
+.heading p {
+    color: #718096;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 27px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #00000008;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px #00000015;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    background: #dcfce7;
+    color: #059669;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-bottom: 17px;
+}
+
+.icon svg {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.card h3 {
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+/* ARTICLE */
+
+.article {
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 18px #00000008;
+}
+
+.article h2 {
+    color: #07845f;
+    margin-bottom: 13px;
+}
+
+.article p {
+    margin-bottom: 12px;
+}
+
+.article ul, .article ol {
+    padding-left: 25px;
+}
+
+/* IMAGES */
+
+.article-image {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 18px 0;
+}
+
+/* PROCESS */
+
+.process {
+    background: #102a43;
+    color: white;
+}
+
+.process .heading h2 {
+    color: white;
+}
+
+.process .heading p {
+    color: #cbd5e1;
+}
+
+.process .card {
+    background: #193c55;
+    color: white;
+}
+
+.process .card h3 {
+    color: var(--green);
+}
+
+/* TABLE */
+
+.table-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 400px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e5eaf0;
+}
+
+th {
+    background: #087f5b;
+    color: white;
+}
+
+.total {
+    color: #07845f;
+    font-weight: bold;
+}
+
+/* PLATFORM LINKS */
+
+.platform {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e5eaf0;
+    transition: .3s;
+}
+
+.platform:hover {
+    border-color: var(--green);
+    transform: translateY(-4px);
+}
+
+.platform a {
+    color: #07845f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* QUOTE */
+
+.quote {
+    background: #087f5b;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.quote h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #071b2d;
+    color: white;
+    padding: 40px 8%;
+    text-align: center;
+}
+
+footer p {
+    color: #cbd5e1;
+}
+
+footer a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+@media(max-width: 768px) {
+    .menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 65px 6%;
+    }
+
+    .hero-icon {
+        font-size: 90px;
+    }
+
+    section {
+        padding: 50px 6%;
+    }
+
+    .article {
+        padding: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <div class="logo">Drop<span>Master.</span></div>
+
+    <button class="menu" id="menuBtn"
+    aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+    <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#how">How It Works</a>
+        <a href="#products">Products</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#start">Get Started</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+        <h1>Dropshipping: Start Your Online Business Today</h1>
+
+        <p>
+            Discover how dropshipping works, find products,
+            connect with suppliers, and build your own
+            successful e-commerce business.
+        </p>
+
+        <a href="#about" class="btn">Explore Article →</a>
+    </div>
+
+    <div class="hero-icon">📦</div>
+
+</div>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="heading">
+        <h2>Introduction to Dropshipping</h2>
+        <p>Learn about the modern world of online selling.</p>
+    </div>
+
+    <div class="article">
+
+        <h2>What Is Dropshipping?</h2>
+
+        <p>
+            Dropshipping is one of the popular business models
+            in the world of e-commerce. It allows people to
+            start an online business without purchasing or
+            storing products in advance.
+        </p>
+
+        <p>
+            In a traditional business, sellers purchase products,
+            keep them in a warehouse, and deliver them to customers.
+            However, dropshipping works differently.
+        </p>
+
+        <p>
+            The seller displays products in an online store.
+            When a customer places an order, the supplier handles
+            the packaging and shipping directly to the customer.
+        </p>
+
+        <p>
+            Dropshipping can be an interesting opportunity for
+            beginners who want to explore online business with
+            relatively low starting inventory costs.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section class="process" id="how">
+
+    <div class="heading">
+        <h2>How Does Dropshipping Work?</h2>
+        <p>Understand the five main steps of the business model.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="15" rx="2"/>
+                    <path d="M3 9h18M8 15h4"/>
+                </svg>
+            </div>
+            <h3>01. Create Store</h3>
+            <p>Build a website where customers can browse and purchase products.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="9" cy="8" r="4"/>
+                    <path d="M3 20c0-4 2-6 6-6s6 2 6 6M16 11l2 2 4-5"/>
+                </svg>
+            </div>
+            <h3>02. Find Supplier</h3>
+            <p>Choose a reliable supplier who offers suitable products.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16v13H4zM4 7l8-4 8 4M9 12h6"/>
+                </svg>
+            </div>
+            <h3>03. Add Products</h3>
+            <p>Display product pictures, descriptions, and selling prices.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 3h2l2 12h11l3-8H6M10 20h.01M18 20h.01"/>
+                </svg>
+            </div>
+            <h3>04. Receive Orders</h3>
+            <p>Customers visit your store and purchase your products.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 7h12v12H3zM15 11h4l3 4v4h-7z"/>
+                    <circle cx="7" cy="20" r="2"/>
+                    <circle cx="18" cy="20" r="2"/>
+                </svg>
+            </div>
+            <h3>05. Delivery</h3>
+            <p>The supplier packages and ships the product to the customer.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BENEFITS -->
+
+<section>
+
+    <div class="heading">
+        <h2>Benefits of Dropshipping</h2>
+        <p>Why do entrepreneurs choose this business model?</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">💰</div>
+            <h3>Low Inventory Costs</h3>
+            <p>You do not need to purchase large amounts of stock in advance.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌍</div>
+            <h3>Work Anywhere</h3>
+            <p>Manage your online store from anywhere with an internet connection.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🛍️</div>
+            <h3>Product Variety</h3>
+            <p>Offer different products without keeping physical inventory.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📊</div>
+            <h3>Test Products</h3>
+            <p>Experiment with products and discover customer demand.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CHALLENGES -->
+
+<section>
+
+    <div class="heading">
+        <h2>Challenges of Dropshipping</h2>
+        <p>Understand the disadvantages before starting.</p>
+    </div>
+
+    <div class="article">
+
+        <h2>Important Business Challenges</h2>
+
+        <ul>
+            <li><b>High Competition:</b> Many online sellers offer similar products.</li>
+            <li><b>Shipping Delays:</b> International suppliers may take longer to deliver.</li>
+            <li><b>Product Quality:</b> You have less direct control over products.</li>
+            <li><b>Profit Margins:</b> Advertising and operating costs reduce profits.</li>
+            <li><b>Supplier Problems:</b> Poor supplier performance can affect your reputation.</li>
+        </ul>
+
+        <p>
+            A successful dropshipping business requires careful
+            planning, product research, and reliable suppliers.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+    <div class="heading">
+        <h2>Best Products for Dropshipping</h2>
+        <p>Explore popular product categories to research.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">📱</div>
+            <h3>Technology</h3>
+            <p>Phone cases, accessories, chargers, and useful gadgets.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏠</div>
+            <h3>Home & Living</h3>
+            <p>Storage organizers, home decorations, and kitchen tools.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏋️</div>
+            <h3>Fitness</h3>
+            <p>Resistance bands, yoga accessories, and fitness equipment.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💄</div>
+            <h3>Beauty</h3>
+            <p>Makeup organizers, beauty tools, and accessories.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🐶</div>
+            <h3>Pet Supplies</h3>
+            <p>Pet toys, grooming accessories, and useful pet products.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">👕</div>
+            <h3>Fashion</h3>
+            <p>Bags, watches, clothing, and fashion accessories.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PLATFORMS -->
+
+<section id="platforms">
+
+    <div class="heading">
+        <h2>Popular Dropshipping Platforms</h2>
+        <p>Useful platforms for building and managing your business.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="platform">
+            <h3>Shopify</h3>
+            <p>Create and manage your own online store.</p>
+            <br>
+            <a href="https://www.shopify.com/" target="_blank" rel="noopener">Visit Shopify →</a>
+        </div>
+
+        <div class="platform">
+            <h3>WooCommerce</h3>
+            <p>Build an e-commerce store using WordPress.</p>
+            <br>
+            <a href="https://woocommerce.com/" target="_blank" rel="noopener">Visit WooCommerce →</a>
+        </div>
+
+        <div class="platform">
+            <h3>AliExpress</h3>
+            <p>Research products and find potential suppliers.</p>
+            <br>
+            <a href="https://www.aliexpress.com/" target="_blank" rel="noopener">Visit AliExpress →</a>
+        </div>
+
+        <div class="platform">
+            <h3>DSers</h3>
+            <p>Manage dropshipping orders and supplier workflows.</p>
+            <br>
+            <a href="https://www.dsers.com/" target="_blank" rel="noopener">Visit DSers →</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GET STARTED -->
+
+<section id="start">
+
+    <div class="heading">
+        <h2>How to Start Your Business</h2>
+        <p>Follow these steps to begin your dropshipping journey.</p>
+    </div>
+
+    <div class="article">
+
+        <ol>
+            <li>Research the dropshipping business model.</li>
+            <li>Select a product niche.</li>
+            <li>Find trustworthy suppliers.</li>
+            <li>Create an online store.</li>
+            <li>Add quality products and descriptions.</li>
+            <li>Set reasonable product prices.</li>
+            <li>Promote products through social media.</li>
+            <li>Provide excellent customer service.</li>
+            <li>Monitor business expenses and profits.</li>
+        </ol>
+
+        <p>
+            If you are starting from Sri Lanka, research payment
+            gateway availability, international shipping,
+            business registration, and applicable taxes before launching.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- PROFIT -->
+
+<section>
+
+    <div class="heading">
+        <h2>Understanding Dropshipping Profit</h2>
+        <p>An example of how to calculate estimated profit.</p>
+    </div>
+
+    <div class="table-box">
+
+        <table>
+            <tr>
+                <th>Description</th>
+                <th>Amount</th>
+            </tr>
+
+            <tr>
+                <td>Selling Price</td>
+                <td>$30</td>
+            </tr>
+
+            <tr>
+                <td>Supplier Cost</td>
+                <td>$15</td>
+            </tr>
+
+            <tr>
+                <td>Advertising Cost</td>
+                <td>$5</td>
+            </tr>
+
+            <tr>
+                <td>Other Fees</td>
+                <td>$2</td>
+            </tr>
+
+            <tr class="total">
+                <td>Estimated Profit</td>
+                <td>$8</td>
+            </tr>
+        </table>
+
+        <p style="margin-top:15px;">
+            This is an example, not guaranteed income.
+            Actual profits depend on all business expenses.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CONCLUSION -->
+
+<div class="quote">
+
+    <h2>Build Your Online Business Today!</h2>
+
+    <p>
+        Create value, build trust, serve customers,
+        and grow your e-commerce business.
+    </p>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>DropMaster.</h2>
+
+    <p>Your guide to dropshipping and online business.</p>
+
+    <p>© 2026 DropMaster. All Rights Reserved.</p>
+
+    <p><a href="#home">Back to Top ↑</a></p>
+
+</footer>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+
+menuBtn.addEventListener("click", function() {
+
+    nav.classList.toggle("active");
+
+    const open = nav.classList.contains("active");
+
+    menuBtn.textContent = open ? "✕" : "☰";
+    menuBtn.setAttribute("aria-expanded", open);
+
+});
+
+document.querySelectorAll("#nav a").forEach(link => {
+
+    link.addEventListener("click", function() {
+
+        nav.classList.remove("active");
+        menuBtn.textContent = "☰";
+        menuBtn.setAttribute("aria-expanded", "false");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+
