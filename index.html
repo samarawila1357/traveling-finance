@@ -2851,3 +2851,697 @@ document.querySelectorAll("#navigation a").forEach(link => {
 </body>
 
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TradeMaster | Trading Education</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --green: #00c389;
+    --dark: #071b2d;
+    --blue: #102e46;
+    --light: #f3f7fa;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--light);
+    color: #243447;
+    line-height: 1.7;
+}
+
+/* NAVIGATION */
+
+header {
+    background: var(--dark);
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--green);
+}
+
+.logo span {
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+.menu {
+    display: none;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(120deg, #071b2d, #075b50);
+    color: white;
+    padding: 100px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 5vw, 58px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #d5e8e4;
+    margin-bottom: 28px;
+}
+
+.hero-icon {
+    font-size: 140px;
+}
+
+.btn {
+    background: var(--green);
+    color: #071b2d;
+    display: inline-block;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 75px 8%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.heading h2 {
+    font-size: 32px;
+    color: var(--dark);
+}
+
+.heading p {
+    color: #718096;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #00000008;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: #e0f8ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+    color: #009c70;
+}
+
+.icon svg {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.card h3 {
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+/* ARTICLE */
+
+.article {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 20px #00000008;
+}
+
+.article h2 {
+    color: #008b65;
+    margin-bottom: 15px;
+}
+
+.article p {
+    margin-bottom: 13px;
+}
+
+/* STRATEGIES */
+
+.strategy {
+    background: var(--dark);
+    color: white;
+}
+
+.strategy .heading h2 {
+    color: white;
+}
+
+.strategy .heading p {
+    color: #c4d4df;
+}
+
+.strategy .card {
+    background: #102e46;
+    color: white;
+    border: 1px solid #24445b;
+}
+
+.strategy .card h3 {
+    color: var(--green);
+}
+
+/* RISK MANAGEMENT */
+
+.risk {
+    background: #fff5e9;
+    border-left: 5px solid #ed9b31;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.risk h3 {
+    color: #a85b00;
+    margin-bottom: 10px;
+}
+
+/* TABLE */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5eaf0;
+}
+
+th {
+    background: #087f5b;
+    color: white;
+}
+
+/* QUOTE */
+
+.quote {
+    background: #087f5b;
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.quote h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #071b2d;
+    color: white;
+    padding: 40px 8%;
+    text-align: center;
+}
+
+footer p {
+    color: #b8c9d5;
+}
+
+footer a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+@media(max-width: 768px) {
+    .menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 65px 6%;
+    }
+
+    .hero-icon {
+        font-size: 90px;
+    }
+
+    section {
+        padding: 50px 6%;
+    }
+
+    .article {
+        padding: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <div class="logo">Trade<span>Master.</span></div>
+
+    <button class="menu" id="menuBtn"
+    aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+    <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About Trading</a>
+        <a href="#markets">Markets</a>
+        <a href="#strategies">Strategies</a>
+        <a href="#risk">Risk Management</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+        <h1>Trading: Learn the Art of Smart Investing</h1>
+
+        <p>
+            Discover the world of financial markets.
+            Learn trading basics, understand market movements,
+            explore strategies, and make informed financial decisions.
+        </p>
+
+        <a href="#about" class="btn">Start Learning →</a>
+    </div>
+
+    <div class="hero-icon">📈</div>
+
+</div>
+
+<!-- MARKETS -->
+
+<section id="markets">
+
+    <div class="heading">
+        <h2>Types of Trading Markets</h2>
+        <p>Explore different financial markets around the world.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 20V10M8 20V5M13 20v-8M18 20V3M2 20h20"/>
+                </svg>
+            </div>
+            <h3>Stock Trading</h3>
+            <p>Buying and selling shares of publicly listed companies through stock markets.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M8 8h8M8 12h8M8 16h8"/>
+                </svg>
+            </div>
+            <h3>Forex Trading</h3>
+            <p>Trading currencies by exchanging one currency for another in the foreign exchange market.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2v20M17 5H9a4 4 0 0 0 0 8h6a4 4 0 0 1 0 8H6"/>
+                </svg>
+            </div>
+            <h3>Crypto Trading</h3>
+            <p>Buying and selling digital assets such as Bitcoin and Ethereum. Prices can be highly volatile.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3v18M3 12h18M5 5l14 14M19 5 5 19"/>
+                </svg>
+            </div>
+            <h3>Commodity Trading</h3>
+            <p>Trading commodities such as gold, silver, oil, and agricultural products.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ARTICLE -->
+
+<section id="about">
+
+    <div class="heading">
+        <h2>Understanding Trading</h2>
+        <p>Learn the fundamentals of financial trading.</p>
+    </div>
+
+    <div class="article">
+
+        <h2>1. What Is Trading?</h2>
+
+        <p>
+            Trading is the process of buying and selling financial
+            assets in different markets. Traders aim to make a profit
+            from changes in the prices of these assets.
+        </p>
+
+        <p>
+            Trading can involve stocks, currencies, cryptocurrencies,
+            commodities, and other financial instruments.
+        </p>
+
+    </div>
+
+    <div class="article">
+
+        <h2>2. How Does Trading Work?</h2>
+
+        <p>
+            Trading works through financial markets where buyers
+            and sellers exchange assets. Prices change according
+            to supply, demand, economic news, company performance,
+            and market sentiment.
+        </p>
+
+        <p>
+            Traders study market information and decide when to
+            buy or sell. However, prices can move unexpectedly,
+            and profits are never guaranteed.
+        </p>
+
+    </div>
+
+    <div class="article">
+
+        <h2>3. Importance of Market Analysis</h2>
+
+        <p>
+            Market analysis helps traders understand price movements
+            and make informed decisions.
+        </p>
+
+        <p>
+            There are two common approaches:
+        </p>
+
+        <ul>
+            <li><b>Technical Analysis:</b> Studying price charts, trends, and trading indicators.</li>
+            <li><b>Fundamental Analysis:</b> Studying economic data, company performance, and financial news.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- STRATEGIES -->
+
+<section class="strategy" id="strategies">
+
+    <div class="heading">
+        <h2>Popular Trading Strategies</h2>
+        <p>Different approaches traders use in financial markets.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Day Trading</h3>
+            <p>Buying and selling financial assets within the same trading day.</p>
+        </div>
+
+        <div class="card">
+            <h3>Swing Trading</h3>
+            <p>Holding positions for several days or weeks to benefit from price movements.</p>
+        </div>
+
+        <div class="card">
+            <h3>Scalping</h3>
+            <p>Making frequent short-term trades to target small price movements. Transaction costs can be significant.</p>
+        </div>
+
+        <div class="card">
+            <h3>Position Trading</h3>
+            <p>Holding investments over longer periods based on broader market trends.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- RISK MANAGEMENT -->
+
+<section id="risk">
+
+    <div class="heading">
+        <h2>Risk Management in Trading</h2>
+        <p>Protecting your money is an important part of trading.</p>
+    </div>
+
+    <div class="risk">
+
+        <h3>⚠ Important Trading Warning</h3>
+
+        <p>
+            Trading involves financial risk. You can lose some
+            or all of the money you invest. Some products,
+            particularly leveraged trading, can create losses
+            greater than your initial deposit.
+        </p>
+
+        <p>
+            Always learn before trading, avoid investing money
+            you cannot afford to lose, understand trading fees,
+            and consider practising with a demo account first.
+        </p>
+
+    </div>
+
+    <br>
+
+    <div class="article">
+
+        <h2>Tips for Beginners</h2>
+
+        <ol>
+            <li>Learn the basics of financial markets.</li>
+            <li>Understand technical and fundamental analysis.</li>
+            <li>Start with a demo trading account.</li>
+            <li>Create a clear trading plan.</li>
+            <li>Use appropriate risk management.</li>
+            <li>Avoid emotional trading decisions.</li>
+            <li>Never believe that profits are guaranteed.</li>
+        </ol>
+
+    </div>
+
+</section>
+
+<!-- COMPARISON TABLE -->
+
+<section>
+
+    <div class="heading">
+        <h2>Trading Market Comparison</h2>
+        <p>Understand the differences between popular markets.</p>
+    </div>
+
+    <div style="overflow-x:auto;">
+        <table>
+            <tr>
+                <th>Market</th>
+                <th>What Is Traded?</th>
+                <th>Risk Consideration</th>
+            </tr>
+
+            <tr>
+                <td>Stock</td>
+                <td>Company Shares</td>
+                <td>Market and company risk</td>
+            </tr>
+
+            <tr>
+                <td>Forex</td>
+                <td>Currency Pairs</td>
+                <td>Exchange rate and leverage risk</td>
+            </tr>
+
+            <tr>
+                <td>Crypto</td>
+                <td>Digital Assets</td>
+                <td>High price volatility</td>
+            </tr>
+
+            <tr>
+                <td>Commodities</td>
+                <td>Gold, Oil, Silver</td>
+                <td>Supply and demand risk</td>
+            </tr>
+        </table>
+    </div>
+
+</section>
+
+<!-- CONCLUSION -->
+
+<div class="quote">
+    <h2>Knowledge Is Your Best Trading Tool!</h2>
+
+    <p>
+        Learn the market, understand the risks,
+        and make informed financial decisions.
+    </p>
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>TradeMaster.</h2>
+
+    <p>Your learning guide to financial markets and trading.</p>
+
+    <p>© 2026 TradeMaster. All Rights Reserved.</p>
+
+    <p>
+        <a href="#home">Back to Top ↑</a>
+    </p>
+
+    <p style="font-size:12px;margin-top:15px;">
+        Educational content only. Not financial advice.
+    </p>
+
+</footer>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+
+menuBtn.addEventListener("click", function() {
+
+    nav.classList.toggle("active");
+
+    const isOpen = nav.classList.contains("active");
+
+    menuBtn.textContent = isOpen ? "✕" : "☰";
+    menuBtn.setAttribute("aria-expanded", isOpen);
+
+});
+
+document.querySelectorAll("#nav a").forEach(link => {
+
+    link.addEventListener("click", function() {
+
+        nav.classList.remove("active");
+        menuBtn.textContent = "☰";
+        menuBtn.setAttribute("aria-expanded", "false");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
