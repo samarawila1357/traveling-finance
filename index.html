@@ -4,6 +4,403 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finance Articles - Comments & Likes</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f7f5;
+    color: #172b25;
+    line-height: 1.6;
+}
+
+header {
+    background: #073b2b;
+    color: white;
+    padding: 25px 15px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+.container {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 15px;
+}
+
+.article {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #00000010;
+}
+
+.article h2 {
+    color: #08794f;
+    margin-bottom: 10px;
+}
+
+.article p {
+    margin-bottom: 15px;
+}
+
+.like-button {
+    border: none;
+    background: #e9f8ef;
+    color: #08794f;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 17px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.like-button:hover {
+    background: #c9f0d8;
+}
+
+.like-button.liked {
+    background: #ffe1e9;
+    color: #e91e63;
+}
+
+.comment-section {
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.comment-section h3 {
+    margin-bottom: 15px;
+}
+
+.comment-section input,
+.comment-section textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.comment-section textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+
+.post-button {
+    background: #08794f;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.post-button:hover {
+    background: #055d3c;
+}
+
+.comments-list {
+    margin-top: 20px;
+}
+
+.comment {
+    background: #f1f8f4;
+    padding: 13px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+    overflow-wrap: anywhere;
+}
+
+.comment strong {
+    color: #08794f;
+}
+
+.comment small {
+    display: block;
+    color: #777;
+    margin-top: 5px;
+}
+
+.empty {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Floating heart and money animations */
+.floating-icon {
+    position: fixed;
+    top: -40px;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+footer {
+    text-align: center;
+    background: #073b2b;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>💰 Finance World</h1>
+    <p>Learn Finance, Trading & Online Business</p>
+</header>
+
+<div class="container">
+
+    <!-- ARTICLE 1 -->
+    <article class="article" data-article="finance">
+        <h2>📊 Finance</h2>
+        <p>
+            Finance is the management of money. It helps people save,
+            invest, manage expenses and build a secure financial future.
+            Learning about finance is important for everyone.
+        </p>
+
+        <button class="like-button" onclick="likeArticle(this)">
+            ❤️ Like <span class="like-count">0</span>
+        </button>
+
+        <div class="comment-section">
+            <h3>💬 Comments</h3>
+            <input class="visitor-name" placeholder="Your name">
+            <textarea class="visitor-comment" placeholder="Write your comment..."></textarea>
+            <button class="post-button" onclick="postComment(this)">
+                Post Comment
+            </button>
+            <div class="comments-list">
+                <p class="empty">No comments yet. Be the first!</p>
+            </div>
+        </div>
+    </article>
+
+    <!-- ARTICLE 2 -->
+    <article class="article" data-article="trading">
+        <h2>📈 Trading</h2>
+        <p>
+            Trading is the buying and selling of financial assets such
+            as stocks, currencies and cryptocurrencies. Learn about
+            market research and risk management before investing.
+        </p>
+
+        <button class="like-button" onclick="likeArticle(this)">
+            ❤️ Like <span class="like-count">0</span>
+        </button>
+
+        <div class="comment-section">
+            <h3>💬 Comments</h3>
+            <input class="visitor-name" placeholder="Your name">
+            <textarea class="visitor-comment" placeholder="Write your comment..."></textarea>
+            <button class="post-button" onclick="postComment(this)">
+                Post Comment
+            </button>
+            <div class="comments-list">
+                <p class="empty">No comments yet. Be the first!</p>
+            </div>
+        </div>
+    </article>
+
+    <!-- ARTICLE 3 -->
+    <article class="article" data-article="dropshipping">
+        <h2>🛒 Dropshipping</h2>
+        <p>
+            Dropshipping is an online business model where a seller
+            sells products without keeping inventory. A supplier
+            ships the product directly to the customer.
+        </p>
+
+        <button class="like-button" onclick="likeArticle(this)">
+            ❤️ Like <span class="like-count">0</span>
+        </button>
+
+        <div class="comment-section">
+            <h3>💬 Comments</h3>
+            <input class="visitor-name" placeholder="Your name">
+            <textarea class="visitor-comment" placeholder="Write your comment..."></textarea>
+            <button class="post-button" onclick="postComment(this)">
+                Post Comment
+            </button>
+            <div class="comments-list">
+                <p class="empty">No comments yet. Be the first!</p>
+            </div>
+        </div>
+    </article>
+
+</div>
+
+<footer>
+    <p>© 2026 Finance World | Learn • Grow • Succeed</p>
+</footer>
+
+<script>
+// Load saved comments and likes
+function getData(key) {
+    try {
+        return JSON.parse(localStorage.getItem(key)) || [];
+    } catch {
+        return [];
+    }
+}
+
+function saveData(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+}
+
+// Add a comment to an article
+function postComment(button) {
+    const article = button.closest(".article");
+    const id = article.dataset.article;
+
+    const nameInput = article.querySelector(".visitor-name");
+    const commentInput = article.querySelector(".visitor-comment");
+
+    const name = nameInput.value.trim();
+    const message = commentInput.value.trim();
+
+    if (!name || !message) {
+        alert("Please enter your name and comment!");
+        return;
+    }
+
+    const comments = getData("comments-" + id);
+
+    comments.push({
+        name: name,
+        message: message,
+        date: new Date().toLocaleString()
+    });
+
+    saveData("comments-" + id, comments);
+
+    nameInput.value = "";
+    commentInput.value = "";
+
+    showComments(article);
+}
+
+// Display all saved comments
+function showComments(article) {
+    const id = article.dataset.article;
+    const comments = getData("comments-" + id);
+    const list = article.querySelector(".comments-list");
+
+    list.replaceChildren();
+
+    if (comments.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "empty";
+        empty.textContent = "No comments yet. Be the first!";
+        list.appendChild(empty);
+        return;
+    }
+
+    comments.slice().reverse().forEach(item => {
+        const box = document.createElement("div");
+        box.className = "comment";
+
+        const author = document.createElement("strong");
+        author.textContent = item.name;
+
+        const message = document.createElement("p");
+        message.textContent = item.message;
+
+        const date = document.createElement("small");
+        date.textContent = item.date;
+
+        box.append(author, message, date);
+        list.appendChild(box);
+    });
+}
+
+// Like button
+function likeArticle(button) {
+    const article = button.closest(".article");
+    const id = article.dataset.article;
+    const key = "likes-" + id;
+
+    let count = Number(localStorage.getItem(key) || 0);
+    count++;
+
+    localStorage.setItem(key, count);
+
+    button.querySelector(".like-count").textContent = count;
+    button.classList.add("liked");
+
+    // Heart rain animation
+    for (let i = 0; i < 18; i++) {
+        createFloatingIcon("❤️");
+    }
+}
+
+// Create floating animation
+function createFloatingIcon(symbol) {
+    const icon = document.createElement("div");
+    icon.className = "floating-icon";
+    icon.textContent = symbol;
+
+    icon.style.left = Math.random() * 100 + "vw";
+    icon.style.fontSize = (20 + Math.random() * 25) + "px";
+    icon.style.animationDuration = (2 + Math.random() * 2) + "s";
+
+    document.body.appendChild(icon);
+
+    setTimeout(() => icon.remove(), 4500);
+}
+
+// Money icons every 5 seconds
+function moneyRain() {
+    for (let i = 0; i < 12; i++) {
+        createFloatingIcon("💰");
+    }
+}
+
+setInterval(moneyRain, 5000);
+
+// Load saved data when page opens
+document.querySelectorAll(".article").forEach(article => {
+    showComments(article);
+
+    const id = article.dataset.article;
+    const count = Number(localStorage.getItem("likes-" + id) || 0);
+
+    article.querySelector(".like-count").textContent = count;
+});
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FinancePro | Smart Money Management</title>
 
 <style>
