@@ -271,9 +271,11 @@
                 transform: translateY(0) rotate(0deg) scale(0.7);
                 opacity: 1;
             }
+
             80% {
                 opacity: 0.9;
             }
+
             100% {
                 transform: translateY(1150px) rotate(360deg) scale(1.2);
                 opacity: 0;
@@ -524,8 +526,13 @@
         }
 
         @keyframes pulseGlow {
-            from { box-shadow: 0 4px 12px rgba(201, 24, 74, 0.3); }
-            to { box-shadow: 0 8px 24px rgba(255, 77, 109, 0.6); }
+            from {
+                box-shadow: 0 4px 12px rgba(201, 24, 74, 0.3);
+            }
+
+            to {
+                box-shadow: 0 8px 24px rgba(255, 77, 109, 0.6);
+            }
         }
 
         .floating-heart-span {
@@ -535,8 +542,15 @@
         }
 
         @keyframes heartBeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.3); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.3);
+            }
         }
 
         /* Comment Section */
@@ -1499,7 +1513,8 @@
     </div>
 
     <!-- ARTICLE DETAIL PREVIEW MODAL -->
-    <div class="admin-modal-overlay" id="articleDetailModalOverlay" onclick="if(event.target.id === 'articleDetailModalOverlay') closeArticleDetailModal()">
+    <div class="admin-modal-overlay" id="articleDetailModalOverlay"
+        onclick="if(event.target.id === 'articleDetailModalOverlay') closeArticleDetailModal()">
         <div class="admin-modal" style="max-width: 750px;">
             <div class="modal-header" style="background:#047857;">
                 <h3 id="detailModalHeading">👁️ Article Details</h3>
@@ -2087,7 +2102,7 @@
         function getLikesData() {
             try {
                 return JSON.parse(localStorage.getItem('ceylon_likes') || '{}');
-            } catch(e) { return {}; }
+            } catch (e) { return {}; }
         }
 
         function getLikeCount(artId) {
@@ -2126,7 +2141,7 @@
             container.style.display = 'block';
 
             const heartSymbols = ['❤️', '💖', '💕', '💗', '💓', '💞', '💘', '🌸', '✨'];
-            
+
             // Interval to spawn raining hearts over 10 seconds
             const spawnInterval = setInterval(() => {
                 const heart = document.createElement('div');
@@ -2134,11 +2149,11 @@
                 heart.innerText = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
                 heart.style.left = Math.random() * 95 + '%';
                 heart.style.fontSize = (Math.random() * 1.5 + 1.2) + 'rem';
-                
+
                 // Random fall speed between 2s and 4s
                 const duration = Math.random() * 2 + 2.2;
                 heart.style.animationDuration = duration + 's';
-                
+
                 container.appendChild(heart);
 
                 // Remove heart once fallen
@@ -2162,13 +2177,13 @@
         function getCommentsData() {
             try {
                 return JSON.parse(localStorage.getItem('ceylon_comments') || '{}');
-            } catch(e) { return {}; }
+            } catch (e) { return {}; }
         }
 
         function getComments(artId) {
             const data = getCommentsData();
             if (data[artId]) return data[artId];
-            
+
             // Seed genuine author & visitor comments across all destination articles
             const defaultSeedComments = {
                 'art-nimani': [
@@ -2225,20 +2240,20 @@
                 return `<div style="color:var(--text-muted); font-size:0.83rem; font-style:italic;">No comments yet. Be the first visitor to write something!</div>`;
             }
             return comments.map(c => `
-                <div class="comment-item">
-                    <div class="comment-header">
+                <div class="comment-item">`
+                < div class= "comment-header" >
                         <span class="comment-author">${escapeHtml(c.name)}</span>
                         <span class="comment-time">${escapeHtml(c.time)}</span>
-                    </div>
-                    <div class="comment-body">${escapeHtml(c.text)}</div>
-                </div>
-            `).join('');
+                    </div >
+                <div class="comment-body">${escapeHtml(c.text)}</div>
+                </div >
+                `).join('');
         }
 
         function handleAddComment(e, artId) {
             e.preventDefault();
-            const nameInput = document.getElementById(`c-name-${artId}`);
-            const textInput = document.getElementById(`c-text-${artId}`);
+            const nameInput = document.getElementById(`c - name - ${ artId }`);
+            const textInput = document.getElementById(`c - text - ${ artId }`);
             const name = nameInput.value.trim();
             const text = textInput.value.trim();
 
@@ -2250,11 +2265,11 @@
             saveComments(artId, comments);
 
             // Re-render comments container
-            const container = document.getElementById(`comments-list-${artId}`);
+            const container = document.getElementById(`comments - list - ${ artId }`);
             if (container) container.innerHTML = renderCommentsHtml(artId);
 
             // Update comment count
-            const countEl = document.getElementById(`comment-count-${artId}`);
+            const countEl = document.getElementById(`comment - count - ${ artId }`);
             if (countEl) countEl.innerText = comments.length;
 
             nameInput.value = '';
